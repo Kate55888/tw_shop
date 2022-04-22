@@ -1,0 +1,52 @@
+﻿
+@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Karl - Fashion Ecommerce | @ViewBag.Title </title>
+
+    @Styles.Render("~/bundles/animate/css")
+    @Styles.Render("~/bundles/bootstrap.min/css")
+    @Styles.Render("~/bundles/core-style/css")
+    @Styles.Render("~/bundles/font-awesome.min/css")
+    @Styles.Render("~/bundles/jquery-ui.min/css")
+    @Styles.Render("~/bundles/magnific-popup/css")
+    @Styles.Render("~/bundles/nouislider/css")
+    @Styles.Render("~/bundles/owl.carousel/css")
+    @Styles.Render("~/bundles/responsive/css")
+    @Styles.Render("~/bundles/themify-icons/css")
+
+    @Styles.Render("~/bundles/style/css")
+
+
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false)}
+
+    <!-- Responsive CSS -->
+</head>
+<body>
+    @Html.Partial("_Menulist")
+    <div id="wrapper">
+        @Html.Partial("_Header")
+
+        @RenderBody()
+
+        <footer class="footer_area">
+            @Html.Partial("_Footer")
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery/jquery-2.2.4.min/js")
+        @Scripts.Render("~/bundles/popper.min/js")
+        @Scripts.Render("~/bundles/bootstrap.min/js")
+        @Scripts.Render("~/bundles/plugins/js")
+        @Scripts.Render("~/bundles/active/js")
+
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>
