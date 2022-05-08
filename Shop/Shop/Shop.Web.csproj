@@ -130,10 +130,12 @@
     <Content Include="fonts\css\font-awesome.min.css" />
     <Content Include="fonts\css\jquery-ui.min.css" />
     <Content Include="fonts\css\magnific-popup.css" />
+    <Content Include="fonts\css\main.css" />
     <Content Include="fonts\css\nouislider.css" />
     <Content Include="fonts\css\owl.carousel.css" />
     <Content Include="fonts\css\responsive.css" />
     <Content Include="fonts\css\themify-icons.css" />
+    <Content Include="fonts\css\util.css" />
     <Content Include="fonts\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\fonts\style.css" />
     <Content Include="fonts\fonts\themify.svg" />
@@ -180,11 +182,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BundleConfig.cs</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -235,6 +232,8 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Autorez.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

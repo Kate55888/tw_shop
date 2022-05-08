@@ -14,7 +14,6 @@ namespace Shop.BusinessLogic.DBModel
             base("name=Shop") // connectionstring name define in your web.config
         {
         }
-
         public virtual DbSet<UDbTable> Users { get; set; }
     }
 }

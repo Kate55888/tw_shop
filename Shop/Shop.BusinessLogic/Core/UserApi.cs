@@ -30,7 +30,7 @@ namespace Shop.BusinessLogic.Core
 
                 using (var todo = new UserContext())
                 {
-                    result.LasIp = data.LoginIp;
+                    result.LastIp = data.LoginIp;
                     result.LastLogin = data.LoginDateTime;
                     todo.Entry(result).State = EntityState.Modified;
                     todo.SaveChanges();
@@ -53,7 +53,7 @@ namespace Shop.BusinessLogic.Core
 
                 using (var todo = new UserContext())
                 {
-                    result.LasIp = data.LoginIp;
+                    result.LastIp = data.LoginIp;
                     result.LastLogin = data.LoginDateTime;
                     todo.Entry(result).State = EntityState.Modified;
                     todo.SaveChanges();
@@ -124,7 +124,7 @@ namespace Shop.BusinessLogic.Core
                 var validate = new EmailAddressAttribute();
                 if (validate.IsValid(session.Username))
                 {
-                    curentUser = db.Users.FirstOrDefault(u => u.Email == session.Username);
+                    curentUser = db.Users.FirstOrDefault(u => u.Username == session.Username);
                 }
                 else
                 {
@@ -139,10 +139,36 @@ namespace Shop.BusinessLogic.Core
             userminimal.Id = curentUser.Id;
             userminimal.Username = curentUser.Username;
             userminimal.Level = curentUser.Level;
-            userminimal.LasIp = curentUser.LasIp;
+            userminimal.LasIp = curentUser.LastIp;
             userminimal.LastLogin = curentUser.LastLogin;
 
             return userminimal;
+        }
+
+        public void UserRegister(UDbTable user)
+        {
+            var foundUser = new UDbTable();
+            using (var db = new UserContext())
+            {
+                foundUser = db.Users.FirstOrDefault(u => u.Email == user.Email);
+            }
+
+
+            var password = LoginHelper.HashGen(user.Password);
+            user.Password = password;
+
+            if (foundUser == null)
+            {
+                using (var db = new UserContext())
+                {
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                }
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
     }
 }

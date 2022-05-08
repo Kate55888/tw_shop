@@ -23,6 +23,8 @@ namespace Shop.App_Start
               .Include("~/fonts/css/jquery-ui.min.css", new CssRewriteUrlTransform()));
             bundles.Add(new StyleBundle("~/bundles/magnific-popup/css")
             .Include("~/fonts/css/magnific-popup.css", new CssRewriteUrlTransform()));
+            bundles.Add(new StyleBundle("~/bundles/main/css")
+            .Include("~/fonts/css/main.css", new CssRewriteUrlTransform()));
             bundles.Add(new StyleBundle("~/bundles/nouislider/css")
             .Include("~/fonts/css/nouislider.css", new CssRewriteUrlTransform()));
             bundles.Add(new StyleBundle("~/bundles/owl.carousel/css")
@@ -31,6 +33,8 @@ namespace Shop.App_Start
             .Include("~/fonts/css/responsive.css", new CssRewriteUrlTransform()));
             bundles.Add(new StyleBundle("~/bundles/themify-icons/css")
             .Include("~/fonts/css/themify-icons.css", new CssRewriteUrlTransform()));
+            bundles.Add(new StyleBundle("~/bundles/util/css")
+            .Include("~/fonts/css/util.css", new CssRewriteUrlTransform()));
             bundles.Add(new StyleBundle("~/bundles/style/css")
              .Include("~/fonts/fonts/style.css", new CssRewriteUrlTransform()));
 
